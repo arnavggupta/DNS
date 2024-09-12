@@ -18,7 +18,7 @@ arcount:0,
 }
 
 const defaultQuestion: IQUESTION={
-name:"codecrafters.io",
+qname:"codecrafters.io",
 qtype:dnsQuestionType.A,
 qclass:dnsQuestionClass.IN
 }
