@@ -18,10 +18,11 @@ export class DNSQUESTION{
             return Buffer.concat(
 value.map((val)=>{
 
-const nameStr=val.qname.split('.').map((part)=>{`${String.fromCharCode(part.length)}${part}`}).join("");
+    const nameStr = val.qname.split('.').map((part) => `${String.fromCharCode(part.length)}${part}`).join("");
+
 const typeAndClass=Buffer.alloc(4);
 
-typeAndClass.writeInt16BE(val.qtype);
+typeAndClass.writeInt16BE(val.qtype,0);
 typeAndClass.writeInt16BE(val.qclass,2);
 return Buffer.concat([Buffer.from(nameStr+'\0','binary'),typeAndClass]);
 
